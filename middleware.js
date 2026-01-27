@@ -1,6 +1,9 @@
 // middleware.js
 import createMiddleware from "next-intl/middleware";
-import { LOCALES, DEFAULT_LOCALE } from "@/constants/locales";
+
+// Inline constants to avoid Edge Runtime path resolution issues on Vercel
+const LOCALES = ["en", "ar"];
+const DEFAULT_LOCALE = "en";
 
 const intlMiddleware = createMiddleware({
   locales: LOCALES,
