@@ -1,5 +1,12 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "@/lib/getMessages";
+import { Open_Sans } from "next/font/google";
+import "./globals.css";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+});
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
@@ -9,7 +16,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body>
+      <body className={openSans.variable}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
@@ -17,4 +24,3 @@ export default async function LocaleLayout({ children, params }) {
     </html>
   );
 }
-
