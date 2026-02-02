@@ -1,15 +1,20 @@
+"use client";
+
 import './page.css';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function RegisterPage() {
+
+    const t = useTranslations("auth");
     return (
         <div className="register-container">
             {/* Left Side - Illustration */}
             <div className="left-section">
                 <div className="logo-container">
                     <div className="logo">
-                        <div className="logo-icon"><Image src="/edutech logo black 5.png" alt="Logo" width={200} height={200} /></div>
+                        <div className="logo-icon"><Image src="/edutech logo black 5.png" alt={t("logoAlt")} width={200} height={200} /></div>
                     </div>
                 </div>
                 <div className="back-to-home-container">
@@ -18,7 +23,7 @@ export default function RegisterPage() {
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
-                        Back to Home
+                        {t("backToHome")}
                     </Link>
                 </div>
                 <div className="illustration">
@@ -29,11 +34,11 @@ export default function RegisterPage() {
             {/* Right Side - Form */}
             <div className="right-section">
                 <div className="form-container">
-                    <h1 className="form-title">Create Your Account</h1>
+                    <h1 className="form-title">{t("registerHeading")}</h1>
 
                     <form className="register-form">
                         <div className="form-group">
-                            <label htmlFor="fullName">Full Name</label>
+                            <label htmlFor="fullName">{t("fullNameLabel")}</label>
                             <input
                                 type="text"
                                 id="fullName"
@@ -44,7 +49,7 @@ export default function RegisterPage() {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="email">Email Address</label>
+                            <label htmlFor="email">{t("emailLabel")}</label>
                             <input
                                 type="email"
                                 id="email"
@@ -55,7 +60,7 @@ export default function RegisterPage() {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">{t("passwordLabel")}</label>
                             <input
                                 type="password"
                                 id="password"
@@ -66,7 +71,7 @@ export default function RegisterPage() {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <label htmlFor="confirmPassword">{t("confirmPasswordLabel")}</label>
                             <input
                                 type="password"
                                 id="confirmPassword"
@@ -77,11 +82,11 @@ export default function RegisterPage() {
                         </div>
 
                         <button type="submit" className="submit-btn">
-                            Sign Up
+                            {t("signUpButton")}
                         </button>
 
                         <div className="divider">
-                            <span>OR</span>
+                            <span>{t("orCaps")}</span>
                         </div>
 
                         <button type="button" className="google-btn">
@@ -92,7 +97,7 @@ export default function RegisterPage() {
                                 <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
                                 <path fill="none" d="M0 0h48v48H0z"></path>
                             </svg>
-                            Google
+                            {t("google")}
                         </button>
                     </form>
                 </div>
