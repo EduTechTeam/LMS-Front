@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import LanguageSwitcher from "@/components/common/LanguageSwitcher";
 
+
 export default function RegisterPage() {
     const t = useTranslations("auth");
 
@@ -355,12 +356,16 @@ export default function RegisterPage() {
 
                             <button
                                 type="button"
-                                className="flex w-full rounded-[15px] self-center justify-center gap-3 bg-brand-white border-gray-400 border-2 py-2 text-black text-[22px] font-medium transition-colors hover:bg-google-btn-hover"
+                                className="flex w-full items-center justify-center gap-3 rounded-[15px] 
+                                border-2 border-gray-400 bg-white py-2 
+                                text-[22px] font-medium text-black 
+                                hover:bg-google-btn-hover"
                             >
                                 <FcGoogle className="text-2xl" />
-
-                                {t("google")}
+                                <span>{t("google")}</span>
                             </button>
+
+
                         </form>
                     </div>
                 </div>
