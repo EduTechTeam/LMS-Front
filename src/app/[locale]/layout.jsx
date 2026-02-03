@@ -1,4 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
+import { Toaster } from "react-hot-toast";
 import { getMessages } from "@/lib/getMessages";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -19,6 +20,7 @@ export default async function LocaleLayout({ children, params }) {
       <body className={openSans.variable}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>
