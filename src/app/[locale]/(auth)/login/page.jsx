@@ -6,7 +6,6 @@ import { Link, useRouter } from "@/navigation";
 import apiClient from "@/utils/apiClient";
 import toast from "react-hot-toast";
 import { useTranslations } from "next-intl";
-import { FaHome, FaGoogle } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import LanguageSwitcher from "@/components/common/LanguageSwitcher";
 
@@ -79,8 +78,8 @@ export default function LoginPage() {
       <div className="flex w-full max-w-[1500px] flex-col overflow-hidden rounded-[30px] pb-5 border border-gray-200 bg-white shadow-sm lg:flex-row">
         {/* Left Side - Info & Image */}
         <div className="relative flex shrink-0 flex-col items-center justify-center bg-white p-8 lg:w-1/2 lg:p-12">
-          <div className="relative mb-5 lg:absolute lg:left-8 lg:top-8 lg:mb-0">
-            <div className="h-[150px] w-[150px] lg:h-[100px] lg:w-[100px]">
+          <div className="relative mb-5 lg:absolute lg:ltr:left-8 lg:rtl:right-8 lg:top-8 lg:mb-0">
+            <Link href={"/"} className="h-[150px] w-[150px] lg:h-[100px] lg:w-[100px]">
               <Image
                 src="/edutech logo black 5.png"
                 alt={t("logoAlt")}
@@ -88,12 +87,10 @@ export default function LoginPage() {
                 height={200}
                 className="block h-full w-full object-contain"
               />
-            </div>
+            </Link>
           </div>
 
-          <div className="absolute right-8 top-11">
-            <LanguageSwitcher />
-          </div>
+         
 
           {/* Illustration */}
           <div className="mt-16 hidden w-full flex-1 items-center justify-center lg:flex">
@@ -134,7 +131,7 @@ export default function LoginPage() {
                     setEmail(e.target.value);
                     setEmailError("");
                   }}
-                  className={`block w-full rounded-xl bg-brand-white border-gray-400 border-2 px-5 py-2.5 text-heading placeholder-placeholder focus:bg-input-focus-bg focus:border-input-focus-border transition-colors ${
+                  className={`block w-full rounded-[15px] bg-brand-white border-gray-400 border-2 px-4 py-[0.6rem] text-heading placeholder-placeholder focus:bg-input-focus-bg focus:border-input-focus-border transition-colors ${
                     emailError ? "ring-2 ring-red-500" : "focus:ring-brand-blue"
                   }`}
                 />
@@ -167,7 +164,7 @@ export default function LoginPage() {
                     setPassword(e.target.value);
                     setPasswordError("");
                   }}
-                  className={`block w-full rounded-xl bg-brand-white border-gray-400 border-2 px-5 py-2.5 text-heading placeholder-placeholder focus:bg-input-focus-bg focus:border-input-focus-border transition-colors ${
+                  className={`block w-full rounded-[15px] bg-brand-white border-gray-400 border-2 px-4 py-[0.6rem] text-heading placeholder-placeholder focus:bg-input-focus-bg focus:border-input-focus-border transition-colors ${
                     passwordError
                       ? "ring-2 ring-red-500"
                       : "focus:ring-brand-blue"
@@ -183,7 +180,7 @@ export default function LoginPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-[100%] self-center rounded-2xl bg-brand-blue py-2 text-[24px] font-semibold text-brand-black shadow-md transition-all hover:brightness-105 hover:shadow-lg active:scale-[0.99] ${
+                  className={`w-full self-center rounded-[15px] bg-brand-blue py-2 text-[24px] font-semibold text-brand-black shadow-md transition-all hover:brightness-105 hover:shadow-lg active:scale-[0.99] ${
                     loading ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 >
@@ -198,7 +195,7 @@ export default function LoginPage() {
 
                 <button
                   type="button"
-                  className="flex w-[100%] rounded-2xl self-center justify-center gap-3 bg-brand-white border-gray-400 border-2 py-2 text-black text-[22px] font-medium transition-colors hover:bg-google-btn-hover"
+                  className="flex w-full rounded-[15px] self-center justify-center gap-3 bg-brand-white border-gray-400 border-2 py-2 text-black text-[22px] font-medium transition-colors hover:bg-google-btn-hover"
                 >
                   <FcGoogle className="text-3xl mt-[3px] " />
                   {t("google")}
