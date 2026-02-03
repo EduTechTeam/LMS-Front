@@ -183,7 +183,7 @@ body {
     outline: none;
     background: #f8fafc;
     border-color: #60a5fa;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+    box-shadow: 0 0 0 3px #475569;
 }
 
 .form-group input::placeholder {
@@ -195,7 +195,7 @@ body {
     padding: 0.75rem;
     font-size: 1rem;
     font-weight: 600;
-    color: #000000;
+    color: #475569;
     background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
     border: none;
     border-radius: 10px;
